@@ -1,10 +1,7 @@
 package com.company;
 
 public class BubbleSort {
-    private int[]testArr;
-    public BubbleSort(int[]testArr){
-        this.testArr=testArr;
-    }
+
     public static void bubbleSort(int[]testArr){
         int x = 0;
         int y = 0;
@@ -23,12 +20,11 @@ public class BubbleSort {
         testArr[i]=y;
     }
     public static int[]randomIntArr(int count){
-        int []arr=new int[count];
-        for(int counter = 0;counter!=count-1;counter++){
+        int[]arr=new int[count];
+        for(int counter = 0;counter<count;counter++){
             arr[counter]=(int)(Math.random()*10000);
             counter++;
         }
         return arr;
     }
 }
-
