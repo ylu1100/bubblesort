@@ -1,23 +1,54 @@
 package com.company;
 
-public class Main {
+public class SortingUtil {
+    public static void swap(int[] testArr, int x, int y, int i) {
+        y = testArr[x];
+        testArr[x] = testArr[i];
+        testArr[i] = y;
+    }
 
-    public static void main(String[] args) {
-        int[]testArr = {8,6,7,5,3,0,9,10,1,2,3};
-        System.out.print("Before: ");
-        for(int num:testArr){
-            System.out.print(num+" ");
+    public static int[] randomIntArr(int count) {
+        int[] arr = new int[count];
+        for (int counter = 0; counter != count - 1; counter++) {
+            arr[counter] = (int) (Math.random() * 10000);
+            counter++;
         }
-        System.out.println();
-        BubbleSort.bubbleSort(testArr);
-        System.out.print("After: ");
-        for(int num:testArr){
-            System.out.print(num+" ");// write your code here
+        return arr;
+    }
+
+    public static void bubbleSort(int[] testArr) {
+        int x = 0;
+        int y = 0;
+        while (x != testArr.length - 1) {
+            for (int i = x + 1; i < testArr.length; i++) {
+                if (testArr[x] > testArr[i]) {
+                    swap(testArr, x, y, i);
+                }
+            }
+            x++;
         }
-        long time = System.nanoTime();
-        SortingUtil.bubbleSort(testArr);
-        time = System.nanoTime() - time;
-        System.out.println("Time taken: "+ time);
+    }
+
+    public static boolean isSorted(int[] testArr) {
+        for (int x = 0; x != testArr.length - 1; x++)
+            for (int i = x + 1; i < testArr.length; i++) {
+                if (testArr[x] > testArr[i]) {
+                    return false;
+                }
+            }
+        return true;
+    }
+
+    public static boolean checkSum(int[] before, int[] after) {
+        int sumbefore = 0;
+        int sumafter = 0;
+        for (int x = 0; x != before.length - 1; x++) {
+            sumbefore = sumbefore + before[x];
+        }
+        for (int y = 0; y != after.length - 1; y++) {
+            sumafter = sumafter + after[y];
+        }
+        return sumafter == sumbefore;
     }
 }
 
