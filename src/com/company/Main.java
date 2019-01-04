@@ -4,13 +4,15 @@ public class Main {
 
    public static void main(String[] args) {
        int[]testArr = {8,6,7,5,3,0,9,10,1,2,3};
-       System.out.print("Before: ");
+       int[]before=testArr;
+   
        for(int num:testArr){
            System.out.print(num+" ");
        }
        System.out.println();
        BubbleSort.bubbleSort(testArr);
-       System.out.print("After: ");
+      
+       int[]after=testArr;
        for(int num:testArr){
            System.out.print(num+" ");// write your code here
        }
