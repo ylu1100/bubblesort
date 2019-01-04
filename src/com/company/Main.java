@@ -10,10 +10,14 @@ public class Main {
         }
         System.out.println();
         BubbleSort.bubbleSort(testArr);
-	System.out.print("After: ");
-	for(int num:testArr){
-	    System.out.print(num+" ");// write your code here
-    }
-    System.out.println();
+        System.out.print("After: ");
+        for(int num:testArr){
+            System.out.print(num+" ");// write your code here
+        }
+        long time = System.nanoTime();
+        SortingUtil.bubbleSort(testArr);
+        time = System.nanoTime() - time;
+        System.out.println("Time taken: "+ time);
     }
 }
+
