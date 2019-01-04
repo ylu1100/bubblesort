@@ -16,8 +16,7 @@ public class Main {
        }
        System.out.println();
        long time = System.nanoTime();
-       int[]testarray=BubbleSort.randomIntArr(100);
-       BubbleSort.bubbleSort(testarray);
+       SortingUtil.bubbleSort(testArr);
        time = System.nanoTime()-time;
        System.out.println("Time Taken: "+time);
        System.out.println("Is it sorted?: "+ SortingUtil.isSorted(testArr));
