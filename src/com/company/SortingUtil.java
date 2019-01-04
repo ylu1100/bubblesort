@@ -7,10 +7,10 @@ public class SortingUtil {
         testArr[i] = y;
     }
 
-    public static int[] randomIntArr(int count) {
-        int[] arr = new int[count];
-        for (int counter = 0; counter != count - 1; counter++) {
-            arr[counter] = (int) (Math.random() * 10000);
+     public static int[]randomIntArr(int count){
+        int[]arr=new int[count];
+        for(int counter = 0;counter<count;counter++){
+            arr[counter]=(int)(Math.random()*10000);
             counter++;
         }
         return arr;
