@@ -30,13 +30,13 @@ public class SortingUtil {
     }
 
     public static boolean isSorted(int[] testArr) {
+        condition=true
         for (int x = 0; x != testArr.length - 1; x++)
             for (int i = x + 1; i < testArr.length; i++) {
                 if (testArr[x] > testArr[i]) {
-                    return false;
-                }
+                    condition= false;            
             }
-        return true;
+         return condition,
     }
 
     public static boolean checkSum(int[] before, int[] after) {
