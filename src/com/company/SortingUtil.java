@@ -29,14 +29,21 @@ public class SortingUtil {
         }
     }
 
-    public static boolean isSorted(int[] testArr) {
-        condition=true
-        for (int x = 0; x != testArr.length - 1; x++)
-            for (int i = x + 1; i < testArr.length; i++) {
+   public static boolean isSorted(int[] testArr) {
+        int condition = 0;
+        for (int x = 0; x != testArr.length; x++) {
+            for (int i = x + 1; i < testArr.length - 1; i++) {
                 if (testArr[x] > testArr[i]) {
-                    condition= false;            
+                    condition = 1;
+                }
             }
-         return condition,
+        }
+        if(condition == 1){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 
     public static boolean checkSum(int[] before, int[] after) {
