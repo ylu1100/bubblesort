@@ -58,9 +58,9 @@ public class SortingUtil {
        for(int min = 0;min != testArr.length-1;min++) {
             for (int i = min + 1; i < testArr.length; i++) {
                 if (testArr[min] > testArr[i]) {
+                    minloc=i;
                     y = testArr[min];
                     minvalue = testArr[i];
-                    minloc=i;
                 }
             }
            testArr[min]=minvalue;
@@ -69,5 +69,4 @@ public class SortingUtil {
 
     }
 }
-
 
