@@ -1,8 +1,10 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class SortingUtil {
-    public static void swap(int[] testArr, int x, int y, int i) {
-        y = testArr[x];
+    public static void swap(int[] testArr, int x, int i) {
+        int y = testArr[x];
         testArr[x] = testArr[i];
         testArr[i] = y;
     }
@@ -18,11 +20,10 @@ public class SortingUtil {
 
     public static void bubbleSort(int[] testArr) {
         int x = 0;
-        int y = 0;
         while (x != testArr.length - 1) {
             for (int i = x + 1; i < testArr.length; i++) {
                 if (testArr[x] > testArr[i]) {
-                    swap(testArr, x, y, i);
+                    swap(testArr, x, i);
                 }
             }
             x++;
@@ -30,15 +31,12 @@ public class SortingUtil {
     }
 
     public static boolean isSorted(int[] testArr) {
-        int condition = 0;
-        for (int x = 0; x != testArr.length; x++) {
-            for (int i = x + 1; i < testArr.length - 1; i++) {
-                if (testArr[x] > testArr[i]) {
-                    condition = 1;
-                }
+        for (int x = 0; x < testArr.length - 1; x++) {
+            if (testArr[x] > testArr[x + 1]) {
+                return false;
             }
         }
-        return (condition == 0);
+        return true;
     }
 
     public static boolean checkSum(int[] before, int[] after) {
@@ -54,11 +52,22 @@ public class SortingUtil {
     }
 
     public static void selectionsort(int[] testArr) {
-        int min = testArr[0];
-        int minloc = 0;
-        for (int i = 0; i < testArr.length; i++) {
-
+        int minvalue = testArr[0];
+        int minloc=0;
+        int y=0;
+       for(int min = 0;min != testArr.length-1;min++) {
+            for (int i = min + 1; i < testArr.length; i++) {
+                if (testArr[min] > testArr[i]) {
+                    y = testArr[min];
+                    minvalue = testArr[i];
+                    minloc=i;
+                }
+            }
+           testArr[min]=minvalue;
+            testArr[minloc] = y;
         }
+
     }
 }
+
 
