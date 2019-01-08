@@ -21,7 +21,7 @@ public class Main {
         SortingUtil.bubbleSort(testArr);
         time = System.nanoTime()-time;
         System.out.println("Time Taken: "+time);
-        System.out.println("Is it sorted?: "+ SortingUtil.isSorted(testArr));
+        System.out.println("Is it sorted?: "+ BubbleSort.isSorted(testArr));
         System.out.println("Are the sums equal? :"+SortingUtil.checkSum(before,after));
     }
 }
