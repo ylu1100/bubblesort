@@ -17,6 +17,11 @@ public class Main {
             System.out.print(num+" ");// write your code here
         }
         System.out.println();
+        SortingUtil.selectionsort(testArr);
+        for(int num:testArr){
+            System.out.print(num+" ");// write your code here
+        }
+        System.out.println();
         long time = System.nanoTime();
         SortingUtil.bubbleSort(testArr);
         time = System.nanoTime()-time;
