@@ -7,10 +7,10 @@ public class SortingUtil {
         testArr[i] = y;
     }
 
-     public static int[]randomIntArr(int count){
-        int[]arr=new int[count];
-        for(int counter = 0;counter<count;counter++){
-            arr[counter]=(int)(Math.random()*10000);
+    public static int[] randomIntArr(int count) {
+        int[] arr = new int[count];
+        for (int counter = 0; counter < count; counter++) {
+            arr[counter] = (int) (Math.random() * 10000);
             counter++;
         }
         return arr;
@@ -29,7 +29,7 @@ public class SortingUtil {
         }
     }
 
-   public static boolean isSorted(int[] testArr) {
+    public static boolean isSorted(int[] testArr) {
         int condition = 0;
         for (int x = 0; x != testArr.length; x++) {
             for (int i = x + 1; i < testArr.length - 1; i++) {
@@ -38,12 +38,7 @@ public class SortingUtil {
                 }
             }
         }
-        if(condition == 1){
-            return false;
-        }
-        else{
-            return true;
-        }
+        return (condition == 0);
     }
 
     public static boolean checkSum(int[] before, int[] after) {
@@ -56,6 +51,14 @@ public class SortingUtil {
             sumafter = sumafter + after[y];
         }
         return sumafter == sumbefore;
+    }
+
+    public static void selectionsort(int[] testArr) {
+        int min = testArr[0];
+        int minloc = 0;
+        for (int i = 0; i < testArr.length; i++) {
+
+        }
     }
 }
 
